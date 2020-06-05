@@ -1,5 +1,7 @@
-package com.github.greekpanda.jdk8.date;
+package com.github.greekpanda.jdk8.defaultinterface;
 
+import com.github.greekpanda.jdk8.date.MyInterface;
+import com.github.greekpanda.jdk8.date.SubClass;
 import org.junit.Test;
 
 /**

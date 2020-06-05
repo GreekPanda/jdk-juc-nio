@@ -14,6 +14,14 @@ public class Employee {
     private Integer age;
     private BigDecimal salary;
 
+    public Employee() {
+
+    }
+
+    public Employee(Integer id) {
+        this.id = id;
+    }
+
     public Employee(String name) {
         this.name = name;
     }
@@ -62,6 +70,9 @@ public class Employee {
         this.salary = salary;
     }
 
+    public String show() {
+        return "Employee show";
+    }
 
     @Override
     public boolean equals(Object o) {

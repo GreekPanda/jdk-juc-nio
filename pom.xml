@@ -9,6 +9,13 @@
     <version>1.0-SNAPSHOT</version>
 
     <url>http://www.github.com/GreekPanda</url>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <properties>
         <java.version>1.8</java.version>
@@ -30,6 +37,12 @@
                 <version>${springboot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+                <version>${springboot.version}</version>
             </dependency>
 <!--            <dependency>-->
 <!--                <groupId>org.springframework.cloud</groupId>-->

@@ -3,7 +3,6 @@ package com.github.greekpanda.jdk8.lambda;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;

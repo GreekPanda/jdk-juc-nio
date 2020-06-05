@@ -43,7 +43,7 @@ public class Test1 {
     /////////////////////////////////////////////////////////////////
     //结合更具体例子
 
-    List<Employee> list = Arrays.asList(
+    private List<Employee> employeeList = Arrays.asList(
             new Employee(101, "张三", 18, BigDecimal.valueOf(9999.99)),
             new Employee(102, "李四", 59, BigDecimal.valueOf(6666.66)),
             new Employee(103, "王五", 28, BigDecimal.valueOf(3333.33)),
@@ -54,12 +54,12 @@ public class Test1 {
     //正常使用方法调用来获取
     @Test
     public void getInfoByAge() {
-        List<Employee> lstFilterByAge = filterEmployeeByAge(list);
+        List<Employee> lstFilterByAge = filterEmployeeByAge(employeeList);
         for (Employee e : lstFilterByAge) {
             System.out.println(e.toString());
         }
         System.out.println("---------------------");
-        List<Employee> lstFilterBySalary = filterEmployeeBySalary(list);
+        List<Employee> lstFilterBySalary = filterEmployeeBySalary(employeeList);
         for (Employee e : lstFilterBySalary) {
             System.out.println(e.toString());
         }
@@ -100,12 +100,12 @@ public class Test1 {
 
     @Test
     public void testByFilterWithStrategyPattern() {
-        List<Employee> listEmployee = filterEmployee(list, new FilterEmployeeByAge());
+        List<Employee> listEmployee = filterEmployee(employeeList, new FilterEmployeeByAge());
         for (Employee e : listEmployee) {
             System.out.println(e.toString());
         }
         System.out.println("===============================");
-        List<Employee> list1 = filterEmployee(list, new FilterEmployeeBySalary());
+        List<Employee> list1 = filterEmployee(employeeList, new FilterEmployeeBySalary());
         for (Employee e : list1) {
             System.out.println(e.toString());
         }
@@ -114,7 +114,7 @@ public class Test1 {
     //1.使用匿名内部类进行优化
     @Test
     public void testByFilterWithAnonymous() {
-        List<Employee> list1 = filterEmployee(list, new MyPredicate<Employee>() {
+        List<Employee> list1 = filterEmployee(employeeList, new MyPredicate<Employee>() {
             @Override
             public boolean test(Employee employee) {
                 return employee.getAge() < 35;
@@ -125,7 +125,7 @@ public class Test1 {
         }
 
         System.out.println("=========================");
-        List<Employee> list2 = filterEmployee(list, new MyPredicate<Employee>() {
+        List<Employee> list2 = filterEmployee(employeeList, new MyPredicate<Employee>() {
             @Override
             public boolean test(Employee employee) {
                 return employee.getSalary().compareTo(BigDecimal.valueOf(5000)) >= 0;
@@ -139,10 +139,10 @@ public class Test1 {
     //直接使用lambda
     @Test
     public void testByFilterLambda() {
-        List<Employee> list1 = filterEmployee(list, (e) -> e.getAge() <= 35);
+        List<Employee> list1 = filterEmployee(employeeList, (e) -> e.getAge() <= 35);
         list1.forEach(System.out::println);
         System.out.println("=============================");
-        List<Employee> list2 = filterEmployee(list, (e) -> e.getSalary().compareTo(BigDecimal.valueOf(5000)) >= 0);
+        List<Employee> list2 = filterEmployee(employeeList, (e) -> e.getSalary().compareTo(BigDecimal.valueOf(5000)) >= 0);
         list2.forEach(System.out::println);
     }
 }

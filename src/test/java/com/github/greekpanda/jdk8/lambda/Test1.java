@@ -139,7 +139,7 @@ public class Test1 {
     //直接使用lambda
     @Test
     public void testByFilterLambda() {
-        List<Employee list1 = filterEmployee(list, (e) -> e.getAge() <= 35);
+        List<Employee> list1 = filterEmployee(list, (e) -> e.getAge() <= 35);
         list1.forEach(System.out::println);
         System.out.println("=============================");
         List<Employee> list2 = filterEmployee(list, (e) -> e.getSalary().compareTo(BigDecimal.valueOf(5000)) >= 0);

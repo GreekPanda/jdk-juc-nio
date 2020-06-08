@@ -1,11 +1,10 @@
 package com.github.greekpanda.jdk8.stream;
 
 import com.github.greekpanda.jdk8.date.Employee;
-import jdk.nashorn.internal.runtime.regexp.joni.constants.OPCode;
+
 import org.junit.Test;
 
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**

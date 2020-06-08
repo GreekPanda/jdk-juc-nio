@@ -109,7 +109,8 @@ public class TestStreamApi {
 
     @Test
     public void test5() {
-        emps.stream().filter(e -> e.getSalary().compareTo(BigDecimal.valueOf(5000.0)) >= 0)
+        emps.stream().filter(e -> e.getSalary()
+                .compareTo(BigDecimal.valueOf(5000.0)) >= 0)
                 .skip(2)
                 .forEach(System.out::println);
     }
